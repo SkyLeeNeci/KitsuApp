@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/categoriesFragment">
+    <fragment
+        android:id="@+id/animeDetailsFragment"
+        android:name="karpenko.test.kitsuapp.view.fragment.AnimeDetailFragment"
+        android:label="AnimeDetailFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/animesListFragment"
+        android:name="karpenko.test.kitsuapp.view.fragment.AnimeListFragment"
+        android:label="AnimeListFragment" >
+        <action
+            android:id="@+id/action_animeListFragment_to_same"
+            app:destination="@id/animesListFragment"
+            />
+        <action
+            android:id="@+id/action_animesListFragment_to_animeDetailsFragment"
+            app:destination="@id/animeDetailsFragment"
+            app:popUpTo="@id/animesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="karpenko.test.kitsuapp.view.fragment.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
+</navigation>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Kitsu App</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--menu item name strings-->
+    <string name="anime">Anime</string>
+    <!-- TODO add all next -->
+
+    <!--item anime strings-->
+    <string name="animeRating">Rating: %s</string>
+    <string name="animePopularity">Popularity Rank : %s</string>
+    <string name="animeAgeLimit">Age limit : %s</string>
+    <!--anime detail screen strings-->
+    <string name="animeEpisodeCount">Episode Count : %s</string>
+    <string name="animeEpisodeLength">Episode Length : %s</string>
+    <string name="animeTotalLength">Total Length</string>
+    <string name="animeStartDate">Start Date : %s</string>
+    <string name="animeEndDate">End Date : %s</string>
+</resources>

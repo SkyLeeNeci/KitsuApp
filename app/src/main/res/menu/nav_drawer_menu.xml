@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_character"
+        android:title="Characters" />
+    <item
+        android:id="@+id/animesListFragment"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="Anime" />
+    <item
+        android:icon="@drawable/ic_manga"
+        android:title="Manga" />
+    <item
+        android:id="@+id/categoriesFragment"
+        android:icon="@drawable/ic_baseline_category_24"
+        android:title="Category" />
+
+    <item android:title="Settings">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:icon="@drawable/ic_baseline_settings_24"
+                    android:title="Settings" />
+                <item
+                    android:icon="@drawable/ic_support"
+                    android:title="Support and FAQ" />
+            </group>
+
+        </menu>
+    </item>
+
+</menu>

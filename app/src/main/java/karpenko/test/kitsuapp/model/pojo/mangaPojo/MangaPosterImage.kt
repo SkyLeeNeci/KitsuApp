@@ -1,8 +1,8 @@
-package karpenko.test.kitsuapp.model.pojo
+package karpenko.test.kitsuapp.model.pojo.mangaPojo
 
 import com.google.gson.annotations.SerializedName
 
-data class AnimePosterImage(
+data class MangaPosterImage(
     @SerializedName("original")
     val original: String?
 )

@@ -9,6 +9,7 @@
         android:icon="@drawable/ic_baseline_remove_red_eye_24"
         android:title="Anime" />
     <item
+        android:id="@+id/mangaListFragment"
         android:icon="@drawable/ic_manga"
         android:title="Manga" />
     <item

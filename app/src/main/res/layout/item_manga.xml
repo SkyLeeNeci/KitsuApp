@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mangaAttributes"
+            type="karpenko.test.kitsuapp.model.pojo.mangaPojo.MangaAttributes" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="13dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/itemImage"
+                android:layout_margin="4dp"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="2"
+                android:src="@drawable/logo"
+                android:animeImage="@{mangaAttributes.posterImage.original}">
+
+            </ImageView>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/animeNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{mangaAttributes.canonicalTitle}"
+                    tools:text="Manga Name"
+                    android:layout_gravity="center"
+                    android:maxHeight="100dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/animeRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Rating : "
+                        android:text="@{mangaAttributes.ratingRank.toString()}"
+                        android:layout_margin="4dp"/>
+
+                    <TextView
+                        android:id="@+id/animePopularityRank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Popularity Rank : "
+                        android:text="@{mangaAttributes.popularityRank.toString()}"
+                        android:layout_margin="4dp"/>
+
+                    <TextView
+                        android:id="@+id/animeAgeLimit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Age limit : "
+                        android:text="@{mangaAttributes.ageRating.toString()}"
+                        android:layout_margin="4dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

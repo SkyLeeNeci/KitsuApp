@@ -7,7 +7,7 @@
         android:id="@+id/swipeToRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.fragment.AnimeListFragment">
+        tools:context=".view.fragment.MangaListFragment">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
                 android:id="@+id/animeListRV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/item_anime">
+                tools:listitem="@layout/item_manga">
             </androidx.recyclerview.widget.RecyclerView>
 
             <TextView

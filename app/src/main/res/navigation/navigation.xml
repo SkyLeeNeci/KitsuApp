@@ -30,4 +30,9 @@
         android:name="karpenko.test.kitsuapp.view.fragment.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/mangaListFragment"
+        android:name="karpenko.test.kitsuapp.view.fragment.MangaListFragment"
+        android:label="fragment_manga_list"
+        tools:layout="@layout/fragment_manga_list" />
 </navigation>

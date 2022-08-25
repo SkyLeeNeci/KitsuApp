@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Episode Count"
-                    android:text="@{attributes.episodeCount.toString()}" />
+                    android:text="@{@string/animeEpisodeCount(attributes.episodeCount.toString())}" />
 
                 <TextView
                     android:id="@+id/episodeLength"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     tools:text="Episode Length"
-                    android:text="@{attributes.episodeLength.toString()}"/>
+                    android:text="@{@string/animeEpisodeLength(attributes.episodeLength.toString())}"/>
 
                 <TextView
                     android:id="@+id/totalLength"
@@ -65,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:text="Total Length"
-                    android:text="@{attributes.totalLength.toString()}" />
+                    android:text="@{@string/animeTotalLength(attributes.totalLength.toString())}" />
             </LinearLayout>
 
             <TextView
@@ -171,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     tools:text="CreateAt Date"
-                    android:text="@{attributes.startDate}"
+                    android:text="@{@string/animeStartDate(attributes.startDate)}"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toTopOf="@+id/animeDescriptionTV"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -183,11 +183,11 @@
                 <TextView
                     android:id="@+id/updateDate"
                     style="@style/DetailTextStyle"
-                    android:layout_width="98dp"
-                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     tools:text="UpdateAt Date"
-                    android:text="@{attributes.endDate}"
+                    android:text="@{@string/animeEndDate(attributes.endDate)}"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="@+id/createAt"
                     app:layout_constraintStart_toStartOf="@+id/createAt"

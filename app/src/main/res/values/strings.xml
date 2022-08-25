@@ -12,7 +12,10 @@
     <!--anime detail screen strings-->
     <string name="animeEpisodeCount">Episode Count : %s</string>
     <string name="animeEpisodeLength">Episode Length : %s</string>
-    <string name="animeTotalLength">Total Length</string>
+    <string name="animeTotalLength">Total Length : %s</string>
     <string name="animeStartDate">Start Date : %s</string>
     <string name="animeEndDate">End Date : %s</string>
+
+    <!--anime load error string-->
+    <string name="ooops_n_something_went_wrong_n_please_try_again_later">Ooops… \n Something went wrong \n Please try again later</string>
 </resources>

@@ -6,12 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import karpenko.test.kitsuapp.model.pojo.AnimeAttributes
-import karpenko.test.kitsuapp.model.pojo.AnimePosterImage
-import karpenko.test.kitsuapp.model.pojo.Datum
+import karpenko.test.kitsuapp.model.pojo.mangaPojo.MangaAttributes
+import karpenko.test.kitsuapp.utils.MangaPosterTypeConverter
 import karpenko.test.kitsuapp.utils.PosterImageTypeConverter
 
-@Database(entities = [AnimeAttributes::class], version = 1, exportSchema = false)
-@TypeConverters(PosterImageTypeConverter::class)
+@Database(entities = [AnimeAttributes::class, MangaAttributes::class], version = 1, exportSchema = false)
+@TypeConverters(PosterImageTypeConverter::class, MangaPosterTypeConverter::class)
 abstract class AnimeDatabase: RoomDatabase() {
     companion object{
         @Volatile
@@ -35,4 +35,5 @@ abstract class AnimeDatabase: RoomDatabase() {
     }
 
     abstract fun animeDao(): AnimeDao
+    abstract fun mangaDao(): MangaDao
 }

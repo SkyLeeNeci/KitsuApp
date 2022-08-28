@@ -16,6 +16,9 @@
     <string name="animeStartDate">Start Date : %s</string>
     <string name="animeEndDate">End Date : %s</string>
 
+    <!-- DrawerLayoutToggle -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <!--anime load error string-->
     <string name="ooops_n_something_went_wrong_n_please_try_again_later">Ooops… \n Something went wrong \n Please try again later</string>
 </resources>

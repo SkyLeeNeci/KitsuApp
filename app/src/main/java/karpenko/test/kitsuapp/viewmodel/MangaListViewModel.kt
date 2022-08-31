@@ -12,7 +12,7 @@ import karpenko.test.kitsuapp.model.database.AnimeDatabase
 import karpenko.test.kitsuapp.model.pojo.mangaPojo.MangaAttributes
 import kotlinx.coroutines.launch
 
-class MangaListViewModel(application: Application): BaseViewModel(application) {
+class MangaListViewModel(application: Application) : BaseViewModel(application) {
 
     val dao = AnimeDatabase.getInstance(application).mangaDao()
     private val compositeDisposable = CompositeDisposable()
@@ -29,17 +29,15 @@ class MangaListViewModel(application: Application): BaseViewModel(application) {
     val loadingLiveData: LiveData<Boolean>
         get() = _loadingLiveData
 
-
-
-    fun loadDataFromRemote(){
+    fun loadDataFromRemote() {
         val disposable = AnimeApiFactory.mangaApiService.getMangaList()
-            .map { it.data.map { it.mangaAttributes}}
+            .map { it.data.map { it.mangaAttributes } }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                       saveMangaLocal(it)
+                saveMangaLocal(it)
                 Log.d("TEST_MANGA_LOAD", it.toString())
-            },{
+            }, {
                 Log.d("TEST_MANGA_LOAD", it.message.toString())
                 _mangaLoadErrorLiveData.value = true
             })
@@ -47,12 +45,12 @@ class MangaListViewModel(application: Application): BaseViewModel(application) {
     }
 
 
-    private fun saveMangaLocal(list: List<MangaAttributes>){
-        launch{
+    private fun saveMangaLocal(list: List<MangaAttributes>) {
+        launch {
             dao.deleteAllManga()
             val insertRes = dao.insertAnimeList(*list.toTypedArray())
             var i = 0
-            while (i< list.size){
+            while (i < list.size) {
                 list[i].id = insertRes[i].toInt()
                 ++i
             }
@@ -60,7 +58,7 @@ class MangaListViewModel(application: Application): BaseViewModel(application) {
         }
     }
 
-    fun loadDataFromDatabase(){
+    fun loadDataFromDatabase() {
         _loadingLiveData.value = true
         launch {
             val manga = AnimeDatabase.getInstance(getApplication()).mangaDao().getAllManga()
@@ -69,7 +67,7 @@ class MangaListViewModel(application: Application): BaseViewModel(application) {
 
     }
 
-    private fun mangaListRetrieved(animeList: List<MangaAttributes>){
+    private fun mangaListRetrieved(animeList: List<MangaAttributes>) {
         _listOfMangaLiveData.value = animeList
         _mangaLoadErrorLiveData.value = false
         _loadingLiveData.value = false

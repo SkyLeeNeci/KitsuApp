@@ -45,37 +45,38 @@
                     android:text="@{mangaAttributes.canonicalTitle}"
                     tools:text="Manga Name"
                     android:layout_gravity="center"
-                    android:maxHeight="100dp"/>
+                    android:maxHeight="100dp"
+                    android:layout_marginStart="14dp"/>
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/animeRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Rating : "
-                        android:text="@{mangaAttributes.ratingRank.toString()}"
-                        android:layout_margin="4dp"/>
+                        android:layout_margin="4dp"
+                        android:text="@{@string/animeRating(mangaAttributes.ratingRank.toString())}"
+                        tools:text="Rating : " />
 
                     <TextView
                         android:id="@+id/animePopularityRank"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Popularity Rank : "
-                        android:text="@{mangaAttributes.popularityRank.toString()}"
-                        android:layout_margin="4dp"/>
+                        android:layout_margin="4dp"
+                        android:text="@{@string/animePopularity(mangaAttributes.popularityRank.toString())}"
+                        tools:text="Popularity Rank : " />
 
                     <TextView
                         android:id="@+id/animeAgeLimit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Age limit : "
-                        android:text="@{mangaAttributes.ageRating.toString()}"
-                        android:layout_margin="4dp"/>
+                        android:layout_margin="4dp"
+                        android:text="@{@string/animeAgeLimit(mangaAttributes.ageRating)}"
+                        tools:text="Age limit : " />
 
                 </LinearLayout>
 

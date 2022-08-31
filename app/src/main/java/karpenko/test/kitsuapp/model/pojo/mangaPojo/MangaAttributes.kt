@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "mangaAttributes")
 data class MangaAttributes(
 
+    val description: String?,
     val canonicalTitle: String?,
     val averageRating: Double?,
     val userCount: Int?,
@@ -17,7 +18,7 @@ data class MangaAttributes(
     val ageRating: String?,
     val posterImage: MangaPosterImage?
 
-){
+) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 }

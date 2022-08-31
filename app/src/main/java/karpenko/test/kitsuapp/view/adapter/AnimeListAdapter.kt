@@ -1,7 +1,6 @@
 package karpenko.test.kitsuapp.view.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
@@ -9,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import karpenko.test.kitsuapp.R
 import karpenko.test.kitsuapp.databinding.ItemAnimeBinding
 import karpenko.test.kitsuapp.model.pojo.AnimeAttributes
-import karpenko.test.kitsuapp.utils.getProgressDrawable
-import karpenko.test.kitsuapp.utils.loadImage
 import karpenko.test.kitsuapp.view.fragment.AnimeListFragmentDirections
 
 class AnimeListAdapter : RecyclerView.Adapter<AnimeListAdapter.AnimeAttributeViewHolder>() {
@@ -34,7 +31,9 @@ class AnimeListAdapter : RecyclerView.Adapter<AnimeListAdapter.AnimeAttributeVie
         val anime = animeAttributesList[position]
         holder.view.animeAttributes = anime
         holder.itemView.setOnClickListener {
-            Navigation.findNavController(it).navigate(AnimeListFragmentDirections.actionAnimesListFragmentToAnimeDetailsFragment(anime.id))
+            Navigation.findNavController(it).navigate(
+                AnimeListFragmentDirections.actionAnimesListFragmentToAnimeDetailsFragment(anime.id)
+            )
         }
     }
 

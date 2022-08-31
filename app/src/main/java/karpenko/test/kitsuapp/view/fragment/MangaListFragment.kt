@@ -1,13 +1,12 @@
 package karpenko.test.kitsuapp.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import karpenko.test.kitsuapp.R
 import karpenko.test.kitsuapp.databinding.FragmentMangaListBinding
 import karpenko.test.kitsuapp.view.adapter.MangaListAdapter
 import karpenko.test.kitsuapp.viewmodel.MangaListViewModel
@@ -19,7 +18,7 @@ class MangaListFragment : Fragment() {
         ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
-        ) [MangaListViewModel::class.java]
+        )[MangaListViewModel::class.java]
     }
 
     private var mangaAdapter = MangaListAdapter()
@@ -53,26 +52,26 @@ class MangaListFragment : Fragment() {
 
     }
 
-    private fun observeViewModel(){
+    private fun observeViewModel() {
 
-        viewModel.listOfMangaLiveData.observe(viewLifecycleOwner){
+        viewModel.listOfMangaLiveData.observe(viewLifecycleOwner) {
             it?.let {
                 binding.animeListRV.visibility = View.VISIBLE
                 mangaAdapter.mangaAttributesList = it
             }
         }
 
-        viewModel.loadingLiveData.observe(viewLifecycleOwner){
+        viewModel.loadingLiveData.observe(viewLifecycleOwner) {
             it?.let {
                 binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
-                if (it){
+                if (it) {
                     binding.errorMessageTV.visibility = View.GONE
                     binding.animeListRV.visibility = View.GONE
                 }
             }
         }
 
-        viewModel.mangaLoadErrorLiveData.observe(viewLifecycleOwner){
+        viewModel.mangaLoadErrorLiveData.observe(viewLifecycleOwner) {
             it?.let {
                 binding.errorMessageTV.visibility = if (it) View.VISIBLE else View.GONE
                 if (it) binding.progressBar.visibility = View.GONE

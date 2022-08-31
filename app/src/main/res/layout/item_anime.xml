@@ -24,11 +24,12 @@
 
             <ImageView
                 android:id="@+id/itemImage"
-                android:layout_margin="4dp"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
+                android:layout_margin="4dp"
                 android:layout_weight="2"
-                android:animeImage="@{animeAttributes.posterImage.original}">
+                android:animeImage="@{animeAttributes.posterImage.original}"
+                tools:src="@drawable/logo">
 
             </ImageView>
 
@@ -42,39 +43,41 @@
                     android:id="@+id/animeNameTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{animeAttributes.canonicalTitle}"
                     android:layout_gravity="center"
-                    android:maxHeight="100dp"/>
+                    android:layout_marginStart="10dp"
+                    android:maxHeight="100dp"
+                    android:text="@{animeAttributes.canonicalTitle}"
+                    tools:text="Anime Name" />
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/animeRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Rating : "
+                        android:layout_margin="4dp"
                         android:text="@{@string/animeRating(animeAttributes.averageRating)}"
-                        android:layout_margin="4dp"/>
+                        tools:text="Rating : " />
 
                     <TextView
                         android:id="@+id/animePopularityRank"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Popularity Rank : "
+                        android:layout_margin="4dp"
                         android:text="@{@string/animePopularity(animeAttributes.popularityRank)}"
-                        android:layout_margin="4dp"/>
+                        tools:text="Popularity Rank : " />
 
                     <TextView
                         android:id="@+id/animeAgeLimit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Age limit : "
+                        android:layout_margin="4dp"
                         android:text="@{@string/animeAgeLimit(animeAttributes.ageRatingGuide)}"
-                        android:layout_margin="4dp"/>
+                        tools:text="Age limit : " />
 
                 </LinearLayout>
 

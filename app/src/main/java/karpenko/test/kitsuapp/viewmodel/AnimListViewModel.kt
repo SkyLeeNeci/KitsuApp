@@ -2,7 +2,6 @@ package karpenko.test.kitsuapp.viewmodel
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -13,7 +12,7 @@ import karpenko.test.kitsuapp.model.database.AnimeDatabase
 import karpenko.test.kitsuapp.model.pojo.AnimeAttributes
 import kotlinx.coroutines.launch
 
-class AnimListViewModel(application: Application): BaseViewModel(Application()) {
+class AnimListViewModel(application: Application) : BaseViewModel(Application()) {
 
     val dao = AnimeDatabase.getInstance(application).animeDao()
     private val compositeDisposable = CompositeDisposable()
@@ -31,27 +30,27 @@ class AnimListViewModel(application: Application): BaseViewModel(Application()) 
         get() = _loadingLiveData
 
 
-    fun loadDataFromRemote(){
+    fun loadDataFromRemote() {
         val disposable = AnimeApiFactory.animeApiService.getAnimeList()
-            .map { it.data.map { it.animeAttributes }}
+            .map { it.data.map { it.animeAttributes } }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                    saveAnimeListLocal(it)
+                saveAnimeListLocal(it)
                 Log.d("TEST_API_LOAD", it.toString())
-            },{
+            }, {
                 Log.d("TEST_API_LOAD", it.message.toString())
                 _animeLoadErrorLiveData.value = true
             })
         compositeDisposable.add(disposable)
     }
 
-    private fun saveAnimeListLocal(list: List<AnimeAttributes>){
+    private fun saveAnimeListLocal(list: List<AnimeAttributes>) {
         launch {
             dao.deleteAllAnime()
             val insertRes = dao.insertAnimeList(*list.toTypedArray())
             var i = 0
-            while (i< list.size){
+            while (i < list.size) {
                 list[i].id = insertRes[i].toInt()
                 ++i
             }
@@ -59,7 +58,7 @@ class AnimListViewModel(application: Application): BaseViewModel(Application()) 
         }
     }
 
-    fun loadDataFromDatabase(){
+    fun loadDataFromDatabase() {
 
         _loadingLiveData.value = true
         launch {
@@ -69,7 +68,7 @@ class AnimListViewModel(application: Application): BaseViewModel(Application()) 
 
     }
 
-    private fun animeListRetrieved(animeList: List<AnimeAttributes>){
+    private fun animeListRetrieved(animeList: List<AnimeAttributes>) {
         _listOfAnimeLiveData.value = animeList
         _animeLoadErrorLiveData.value = false
         _loadingLiveData.value = false

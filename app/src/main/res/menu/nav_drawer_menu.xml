@@ -5,29 +5,29 @@
 
     <item
         android:icon="@drawable/ic_character"
-        android:title="Characters" />
+        android:title="@string/characters" />
     <item
         android:id="@+id/animesListFragment"
         android:icon="@drawable/ic_baseline_remove_red_eye_24"
-        android:title="Anime" />
+        android:title="@string/anime" />
     <item
         android:id="@+id/mangaListFragment"
         android:icon="@drawable/ic_manga"
-        android:title="Manga" />
+        android:title="@string/manga" />
     <item
         android:id="@+id/categoriesFragment"
         android:icon="@drawable/ic_baseline_category_24"
-        android:title="Category" />
+        android:title="@string/category" />
 
-    <item android:title="Settings">
+    <item android:title="@string/settings">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:icon="@drawable/ic_baseline_settings_24"
-                    android:title="Settings" />
+                    android:title="@string/settings" />
                 <item
                     android:icon="@drawable/ic_support"
-                    android:title="Support and FAQ" />
+                    android:title="@string/support_and_faq" />
             </group>
 
         </menu>

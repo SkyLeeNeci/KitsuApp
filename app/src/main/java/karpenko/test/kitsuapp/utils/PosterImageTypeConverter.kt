@@ -16,7 +16,7 @@ class PosterImageTypeConverter {
     @TypeConverter
     fun toSource(animePosterImage: String): AnimePosterImage {
         val json = JSONObject(animePosterImage)
-        return AnimePosterImage( json.getString("original"))
+        return AnimePosterImage(json.getString("original"))
     }
 
 }

@@ -7,13 +7,13 @@ import karpenko.test.kitsuapp.model.database.AnimeDatabase
 import karpenko.test.kitsuapp.model.pojo.mangaPojo.MangaAttributes
 import kotlinx.coroutines.launch
 
-class MangaDetailViewModel(application: Application): BaseViewModel(application) {
+class MangaDetailViewModel(application: Application) : BaseViewModel(application) {
 
     private val _mangaDetailLiveData = MutableLiveData<MangaAttributes>()
     val mangaDetailLiveData: LiveData<MangaAttributes>
         get() = _mangaDetailLiveData
 
-    fun fetch(mangaId: Int){
+    fun fetch(mangaId: Int) {
 
         launch {
             val manga = AnimeDatabase.getInstance(getApplication()).mangaDao().getManga(mangaId)

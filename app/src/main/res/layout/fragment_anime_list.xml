@@ -7,7 +7,8 @@
         android:id="@+id/swipeToRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.fragment.AnimeListFragment">
+        tools:context=".view.fragment.AnimeListFragment"
+        android:layout_marginTop="?attr/actionBarSize">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +20,11 @@
                 android:id="@+id/animeListRV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:listitem="@layout/item_anime">
+
             </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
@@ -29,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/ooops_n_something_went_wrong_n_please_try_again_later"
-                android:textColor="#000000"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 android:visibility="gone"

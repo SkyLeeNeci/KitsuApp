@@ -1,12 +1,10 @@
 package karpenko.test.kitsuapp.view.fragment
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import karpenko.test.kitsuapp.databinding.FragmentAnimeListBinding
@@ -55,24 +53,24 @@ class AnimeListFragment : Fragment() {
 
     }
 
-    private fun observeViewModel(){
-        viewModel.listOfAnimeLiveData.observe(viewLifecycleOwner){
+    private fun observeViewModel() {
+        viewModel.listOfAnimeLiveData.observe(viewLifecycleOwner) {
 
             it?.let {
                 binding.animeListRV.visibility = View.VISIBLE
                 animeListAdapter.animeAttributesList = it
             }
         }
-        viewModel.loadingLiveData.observe(viewLifecycleOwner){
+        viewModel.loadingLiveData.observe(viewLifecycleOwner) {
             it?.let {
-                binding.progressBar.visibility  = if (it) View.VISIBLE else View.GONE
-                if (it){
+                binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+                if (it) {
                     binding.errorMessageTV.visibility = View.GONE
                     binding.animeListRV.visibility = View.GONE
                 }
             }
         }
-        viewModel.animeLoadErrorLiveData.observe(viewLifecycleOwner){
+        viewModel.animeLoadErrorLiveData.observe(viewLifecycleOwner) {
 
             it?.let {
                 binding.errorMessageTV.visibility = if (it) View.VISIBLE else View.GONE

@@ -1,19 +1,15 @@
 package karpenko.test.kitsuapp.view.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import karpenko.test.kitsuapp.R
 import karpenko.test.kitsuapp.databinding.FragmentMangaDetailBinding
-import karpenko.test.kitsuapp.databinding.ItemMangaBinding
-import karpenko.test.kitsuapp.viewmodel.AnimeDetailViewModel
 import karpenko.test.kitsuapp.viewmodel.MangaDetailViewModel
-import karpenko.test.kitsuapp.viewmodel.MangaListViewModel
 
 class MangaDetailFragment : Fragment() {
 
@@ -35,7 +31,8 @@ class MangaDetailFragment : Fragment() {
             mangaId = MangaDetailFragmentArgs.fromBundle(it).mangaId
         }
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_manga_detail, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_manga_detail, container, false)
         return binding.root
     }
 
@@ -45,8 +42,8 @@ class MangaDetailFragment : Fragment() {
         observeViewModel()
     }
 
-    private fun observeViewModel(){
-        viewModel.mangaDetailLiveData.observe(viewLifecycleOwner){
+    private fun observeViewModel() {
+        viewModel.mangaDetailLiveData.observe(viewLifecycleOwner) {
             it?.let {
                 binding.attributes = it
             }

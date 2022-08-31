@@ -7,7 +7,7 @@ import karpenko.test.kitsuapp.model.database.AnimeDatabase
 import karpenko.test.kitsuapp.model.pojo.AnimeAttributes
 import kotlinx.coroutines.launch
 
-class AnimeDetailViewModel(application: Application): BaseViewModel(application) {
+class AnimeDetailViewModel(application: Application) : BaseViewModel(application) {
 
     private val _animeDetailLiveData = MutableLiveData<AnimeAttributes>()
     val animeDetailLiveData: LiveData<AnimeAttributes>
@@ -15,8 +15,8 @@ class AnimeDetailViewModel(application: Application): BaseViewModel(application)
 
     fun fetch(uuid: Int) {
         launch {
-            val dog = AnimeDatabase.getInstance(getApplication()).animeDao().getAnime(uuid)
-            _animeDetailLiveData.value = dog
+            val anime = AnimeDatabase.getInstance(getApplication()).animeDao().getAnime(uuid)
+            _animeDetailLiveData.value = anime
         }
     }
 

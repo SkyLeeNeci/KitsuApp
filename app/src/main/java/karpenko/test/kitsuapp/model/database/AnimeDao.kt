@@ -1,12 +1,10 @@
 package karpenko.test.kitsuapp.model.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import karpenko.test.kitsuapp.model.pojo.AnimeAttributes
-import karpenko.test.kitsuapp.model.pojo.Datum
 
 @Dao
 interface AnimeDao {

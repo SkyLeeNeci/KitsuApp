@@ -17,13 +17,13 @@
         android:name="karpenko.test.kitsuapp.view.fragment.AnimeListFragment"
         android:label="AnimeListFragment" >
         <action
-            android:id="@+id/action_animeListFragment_to_same"
-            app:destination="@id/animesListFragment"
-            />
-        <action
             android:id="@+id/action_animesListFragment_to_animeDetailsFragment"
             app:destination="@id/animeDetailsFragment"
-            app:popUpTo="@id/animesListFragment" />
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -34,5 +34,22 @@
         android:id="@+id/mangaListFragment"
         android:name="karpenko.test.kitsuapp.view.fragment.MangaListFragment"
         android:label="fragment_manga_list"
-        tools:layout="@layout/fragment_manga_list" />
+        tools:layout="@layout/fragment_manga_list" >
+        <action
+            android:id="@+id/action_mangaListFragment_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/mangaListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaDetailFragment"
+        android:name="karpenko.test.kitsuapp.view.fragment.MangaDetailFragment"
+        android:label="MangaDetailFragment" >
+        <argument
+            android:name="mangaId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

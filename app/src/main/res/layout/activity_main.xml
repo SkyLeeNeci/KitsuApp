@@ -7,7 +7,7 @@
         android:id="@+id/nav_drawable_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:openDrawer="start">
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,6 +31,7 @@
                     android:background="@android:color/transparent"
                     android:elevation="0dp"
                     app:navigationIcon="@drawable/ic_menu"
+                    app:menu="@menu/search_menu"
                     app:title="@string/app_name"/>
 
             </com.google.android.material.appbar.AppBarLayout>

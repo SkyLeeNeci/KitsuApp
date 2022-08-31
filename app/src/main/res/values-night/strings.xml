@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ooops_n_something_went_wrong_n_please_try_again_later">Ooops... \n Something went wrong \n Please try again later</string>
+    <string name="characters">Characters</string>
+    <string name="manga">Manga</string>
+    <string name="category">Category</string>
+    <string name="settings">Settings</string>
+    <string name="support_and_faq">Support and FAQ</string>
 </resources>
